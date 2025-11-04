@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+header{
+    text-align:center;
+    background-color: rgb(47, 145, 190);
+    border: 1px solid black;
+}
+article nav, iframe{
+    display: inline-block;
+    margin:10px;
+}
+.container-flex{
+    display: flex;
+    justify-content: space-around;
+}
+nav{
+    width: 300px;
+    height: 500px;
+    padding: 20px;
+
+    border: 1px solid black;
+}
+nav li{
+    padding: 5px;
+    list-style-type: none;
+}
+iframe{
+    width: 500px;
+    height: 500px;
+    padding-top: 21px;
+    border: 1px solid black;
+}
+a{
+    /* border: 2px solid gray; */
+    text-align: left;
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: blue;
+}
