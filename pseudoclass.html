@@ -1,13 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR   ">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pseudo Class</title>
 </head>
+
 <body>
     <main>
         <h2>Pseudo-class</h2>
-    </main>
+        <p>Especificidade de pseudo-classes variavel: algumas (como :is()) herdam a maior especificidade dos seletores
+            dentro de seus parênteses, enquanto outras (como :not() e :where()) não adicionam especificidade por si
+            mesmas, mas a especificidade de seus argumentos é considerada.</p>
+        <h3>Pseudo-classes que herdam a especificidade</h3>
+        <p>
+            :is(): Aplica a regra de especificidade do seletor mais específico dentro de sua lista. Isso significa que
+            se um seletor de ID estiver dentro do is(), todos os seletores nessa lista herdarão essa alta
+            especificidade.
+        </p>
+        <p>
+            :not(): Não adiciona especificidade por si só; a especificidade é determinada apenas pelos seletores dentro
+            de seus parênteses. Por exemplo, :not(.classe) tem a mesma especificidade de .classe.
+        </p>
+        <h3>Pseudo-classes que não adicionam especificidade</h3>
+        <p>
+            :where(): Sempre tem especificidade zero. Isso é útil para selecionar elementos sem aumentar a complexidade
+            da cascata. Por exemplo, :where(.classe1, .classe2) tem a mesma especificidade de um seletor de tipo simples
+            (como p). </p>
+
+        <h3>Pseudo-classes começam com ":" e refletem estados ou condições.</h3>
+        <p>
+            Exemplos:
+        <ul>
+            <li>
+                :hover
+            </li>
+            <li>
+                :focus
+            </li>
+            <li>
+                :checked
+            </li>
+            <li>
+                :first-child
+            </li>
+            <li>
+                :not()
+            </li>
+        </ul>
+        Atenção: o seletor interno afeta a Especificidade.
+        </p>
 </body>
+
 </html>

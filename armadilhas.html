@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Armadilhas</title>
 </head>
+
 <body>
     <main>
         <h2>Armadilhas Comuns</h2>
+
+        <h3>1. Uso exagerado de IDs</h3>
+        <p>
+            IDs possuem uma especificidade muito alta. Quando usados demais, tornam o CSS rígido e difícil de
+            sobrescrever,
+            levando a uma verdadeira “guerra de especificidade”.
+        </p>
+
+        <h3>2. Criar seletores excessivamente longos</h3>
+        <pre><code>#header nav ul li a span</code></pre>
+        <p>
+            Seletores longos são muito específicos, porém frágeis. Pequenas mudanças no HTML podem quebrá-los,
+            além de dificultar entender qual regra está prevalecendo.
+        </p>
+
+        <h3>3. Resolver tudo com <code>!important</code></h3>
+        <p>
+            Abusar de <code>!important</code> deixa o CSS difícil de manter. Quando tudo é “importante”, nada é —
+            e sobrescrever estilos se torna complicado.
+        </p>
+
+        <h3>4. Achar que <code>:not()</code> aumenta a especificidade</h3>
+        <p>
+            O seletor <code>:not()</code> não aumenta a especificidade por si só. Apenas os seletores dentro dele
+            contam.
+        </p>
+
+        <h3>5. Esquecer que estilos inline têm prioridade alta</h3>
+        <p>
+            Estilos colocados diretamente no elemento (<code>style="..."</code>) possuem alta prioridade, o que pode
+            causar
+            confusão ao tentar entender por que regras externas não estão sendo aplicadas.
+        </p>
     </main>
 </body>
+
 </html>

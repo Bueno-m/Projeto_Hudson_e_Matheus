@@ -1,13 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pseudo elements</title>
 </head>
+
 <body>
     <main>
         <h2>Pseudo-elements</h2>
+        <p>Especificidade CSS, os pseudo-elementos (como ::before, ::after, ::first-line, ::first-letter, etc.) têm o
+            mesmo peso que um seletor de elemento (tag) normal.</p>
+        <h3>Pontuação na Especificidade</h3>
+        <p>O cálculo da especificidade no CSS é baseado em um sistema de pontuação hierárquico, geralmente representado
+            por quatro categorias: (a, b, c, d).
+        </p>
+        <ul>
+            <li>
+                a: Estilos em linha (inline styles).
+            </li>
+            <li>
+                b: IDs (#exemplo).
+            </li>
+            <li>
+                c: Classes (.exemplo), atributos ([type="text"]) e pseudo-classes (:hover, :focus).
+            </li>
+            <li>
+                d: Elementos (tags) (div, p) e pseudo-elementos (::before, ::after).
+            </li>
+        </ul>
+        <h3>Como funciona na prática</h3>
+        <p>Um pseudo-elemento adiciona um ponto na categoria dos seletores de elemento (d).</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Seletor</th>
+                    <th>Pontuação (a, b, c, d)</th>
+                    <th>Explicação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>p</td>
+                    <td>(0, 0, 0, 1)</td>
+                    <td>Um elemento (tag) p.</td>
+                </tr>
+                <tr>
+                    <td>::before</td>
+                    <td>(0, 0, 0, 1)</td>
+                    <td>Um pseudo-elemento.</td>
+                </tr>
+                <tr>
+                    <td>p::before</td>
+                    <td>(0, 0, 0, 2)</td>
+                    <td>Um elemento p mais um pseudo-elemento ::before.</td>
+                </tr>
+                <tr>
+                    <td>.container::after</td>
+                    <td>(0, 0, 1, 1)</td>
+                    <td>Uma classe .container mais um pseudo-elemento ::after.</td>
+                </tr>
+                <tr>
+                    <td>#header p::first-line</td>
+                    <td>(0, 1, 0, 2)</td>
+                    <td>Um ID #header, um elemento p e um pseudo-elemento ::first-line.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Resumo</h3>
+        <p>
+            A chave é lembrar que, embora os pseudo-elementos permitam estilizar partes específicas de um elemento, eles
+            não aumentam a especificidade de forma significativa; eles contribuem com o mesmo peso de um seletor de
+            elemento básico. Isso os diferencia das pseudo-classes (como :hover), que têm o peso de um seletor de
+            classe.
+        </p>
+        <p>
+            Pseudo-elementos
+            Pseudo-elementos iniciam com :: e visam partes “virtualmente” de um elemento.
+            Exemplos:
+        <ul>
+            <li>
+                ::before
+            </li>
+            <li>
+                ::after
+            </li>
+            <li>
+                ::first-line
+            </li>
+            <li>
+                ::marker
+            </li>
+        </ul>
+        Especificidade: 0–0–0–1
+        </p>
     </main>
 </body>
+
 </html>

@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipos de setores e suas hierarquias</title>
+    <meta charset=" UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tipos de setores e suas hierarquias</title>
 </head>
+
 <body>
     <main>
         <h2>Tipos de setores e suas hierarquias</h2>
-        <p></p>
+
+
+        <p>Quando múltiplas regras CSS tentam estilizar o mesmo elemento, o navegador usa a
+            <strong>especificidade</strong> para decidir qual regra vence. Ela é calculada em quatro níveis:
+            <code>(a, b, c, d)</code>.
+        </p>
+
+        <h3>1. Seletores de tipo (elementos e pseudo-elementos)</h3>
+        <ul>
+            <li>Exemplos: <code>p</code>, <code>h1</code>, <code>div</code>, <code>::before</code>, <code>::after</code>
+            </li>
+            <li>Especificidade: <strong>(0, 0, 0, 1)</strong></li>
+            <li>São os seletores mais fracos.</li>
+        </ul>
+
+        <h3>2. Classes, pseudo-classes e atributos</h3>
+        <ul>
+            <li>Exemplos: <code>.card</code>, <code>:hover</code>, <code>[type="text"]</code></li>
+            <li>Especificidade: <strong>(0, 0, 1, 0)</strong></li>
+        </ul>
+
+        <h3>3. IDs</h3>
+        <ul>
+            <li>Exemplo: <code>#menu</code>, <code>#principal</code></li>
+            <li>Especificidade: <strong>(0, 1, 0, 0)</strong></li>
+        </ul>
+
+        <h3>4. Estilos inline</h3>
+        <pre><code>&lt;p style="color: red;"&gt;Exemplo&lt;/p&gt;</code></pre>
+        <p>Especificidade: <strong>(1, 0, 0, 0)</strong></p>
+
+        <h3>5. O curinga: !important</h3>
+        <p><code>!important</code> supera quase tudo, mas deve ser usado com cuidado.</p>
+
+        <h3>Hierarquia (da mais fraca para a mais forte)</h3>
+        <ol>
+            <li>Seletores de elemento</li>
+            <li>Classes, pseudo-classes e atributos</li>
+            <li>IDs</li>
+            <li>Estilos inline</li>
+            <li><code>!important</code></li>
+        </ol>
+
+        <h3>Metáfora rápida </h3>
+        <p class="metafora">
+            Elementos = estagiários;<br>
+            Classes = funcionários experientes;<br>
+            IDs = gerentes;<br>
+            Inline = diretor;<br>
+            <code>!important</code> = dono da empresa.
+        </p>
     </main>
 </body>
+
 </html>

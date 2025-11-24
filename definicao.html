@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Definição</title>
 </head>
+
 <body>
     <main>
         <h2>Definição</h2>
+        <p>A especificidade no CSS é o algoritmo que o navegador usa para decidir qual regra CSS aplicar quando
+            múltiplas regras apontam para o mesmo elemento.</p>
+        <p>Para definir de uma forma mais clara:</p>
+        <li>
+            <p>Cada seletor do CSS recebe um "peso" baseado no quão específico ele é (os IDs pesam mais, depois classes,
+                atributos, pseudo-classes, depois os tipos de elementos).</p>
+        <li>
+            <p>Quando dua regras que se conflitam se aplicam ao mesmo elemento para a mesma propriedade, <strong>a regra
+                    com maior especificidade vence</strong>.</p>
+            <p>Essa regra ajuda a garantir que estilos mais específicos tenham prioridade sobre estilos mais gerais,
+                permitindo um controle mais preciso sobre a aparência dos elementos em uma página web.</p>
     </main>
 </body>
+
 </html>

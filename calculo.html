@@ -1,13 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculo</title>
 </head>
+
 <body>
     <main>
         <h2>Calculo da Especificidade</h2>
+        <p>O cálculo da especificidade é o método formal que o navegador utiliza para atribuir um "peso" a cada seletor
+            CSS. Essa pontuação é usada para determinar qual regra de estilo será aplicada a um elemento quando há um
+            conflito.</p>
+        <h3>Como é calculada</h3>
+        <p>A especificidade é representada como uma sequência de quatro valores, no formato: (a, b, c, d)</p>
+        <p>Cada letra significa um tipo de seletor:</p>
+        <ul>
+            <li>
+                <p>a – Estilos inline (atributo style="" no HTML)</p>
+            </li>
+            <li>
+                <p>b – IDs (#meu-id)</p>
+            </li>
+            <li>
+                <p>c – Classes (.classe), atributos ([type="text"]) e pseudoclasses (:hover, :not())</p>
+            </li>
+            <li>
+                <p>d – Elementos (div, h1, p) e pseudoelementos (::before, ::after)</p>
+            </li>
+        </ul>
+        <p>Quanto maior o número mais à esquerda, maior a prioridade.</p>
+        <h3>Exemplos Práticos</h3>
+        <h4>Seletor de Elemento</h4>
+        <p>Seletor de Elemento</p>
+        <img src="img/elemento.png" alt="elemento">
+        <ul>
+            <li>
+                <p>a = 0</p>
+            </li>
+            <li>
+                <p>b = 0</p>
+            </li>
+            <li>
+                <p>c = 0</p>
+            </li>
+            <li>
+                <p>d = 1</p>
+            </li>
+        </ul>
+        <p>Seletor de Classe</p>
+        <img src="img/classe.png" alt="classe">
+        <ul>
+            <li>
+                <p>a = 0</p>
+            </li>
+            <li>
+                <p>b = 0</p>
+            </li>
+            <li>
+                <p>c = 1</p>
+            </li>
+            <li>
+                <p>d = 0</p>
+            </li>
+        </ul>
+        <p>Seletor de ID</p>
+        <img src="img/id.png" alt="ID">
+        <ul>
+            <li>
+                <p>a = 0</p>
+            </li>
+            <li>
+                <p>b = 1</p>
+            </li>
+            <li>
+                <p>c = 0</p>
+            </li>
+            <li>
+                <p>d = 0</p>
+            </li>
+        </ul>
+        <p>Estilo Inline</p>
+        <img src="img/inline.png" alt="ID">
+        <ul>
+            <li>
+                <p>a = 1</p>
+            </li>
+            <li>
+                <p>b = 0</p>
+            </li>
+            <li>
+                <p>c = 0</p>
+            </li>
+            <li>
+                <p>d = 0</p>
+            </li>
+        </ul>
+        <h3>Quem vence?</h3>
+        <ul>
+            <li>
+                <p>Classe ganha de Elemento</p>
+            </li>
+            <li>
+                <p>ID ganha de Classe</p>
+            </li>
+            <li>
+                <p>Inline ganha de ID</p>
+            </li>
+        </ul>
+        <img src="img/ganha.png" alt="Vencedor">
+        <p><strong>.alerta</strong> vence porque classe tem mais peso que elemento.</p>
     </main>
 </body>
+
 </html>

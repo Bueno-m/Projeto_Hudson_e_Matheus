@@ -1,13 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RCOD</title>
 </head>
+
 <body>
     <main>
         <h2>Regras da Cascata e Ordem de Declaração</h2>
+
+
+        <h3>1. Especificidade</h3>
+        <p>
+            A especificidade é um sistema de pontuação que o CSS utiliza para decidir qual regra tem prioridade quando
+            mais de uma delas afeta o mesmo elemento.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo de Seletor</th>
+                    <th>Exemplo</th>
+                    <th>Peso</th>
+                    <th>Explicação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Inline Styles</td>
+                    <td><code>style="color:red"</code></td>
+                    <td>(1,0,0,0)</td>
+                    <td>Possuem prioridade máxima entre seletores comuns.</td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td><code>#menu</code></td>
+                    <td>(0,1,0,0)</td>
+                    <td>Muito fortes; devem ser usados com moderação.</td>
+                </tr>
+                <tr>
+                    <td>Classes, pseudo-classes e atributos</td>
+                    <td><code>.btn</code>, <code>:hover</code>, <code>[type="text"]</code></td>
+                    <td>(0,0,1,0)</td>
+                    <td>Flexíveis e amplamente utilizados.</td>
+                </tr>
+                <tr>
+                    <td>Elementos e pseudo-elementos</td>
+                    <td><code>p</code>, <code>::after</code></td>
+                    <td>(0,0,0,1)</td>
+                    <td>Menor prioridade na hierarquia.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>2. Regras da Cascata</h3>
+        <p>A cascata define como o navegador decide o estilo final de cada elemento. Ela considera:</p>
+        <ul>
+            <li>Origem da regra.</li>
+            <li>Importância (<code>!important</code>).</li>
+            <li>Especificidade.</li>
+            <li>Ordem de declaração.</li>
+        </ul>
+
+        <h3>3. Ordem de Declaração</h3>
+        <p>Quando duas regras têm a mesma especificidade, o CSS aplica a que foi declarada por último.</p>
+        <h3>Por que isso é importante?</h3>
+        <ul>
+            <li>Evita conflitos entre estilos.</li>
+            <li>Reduz a necessidade de <code>!important</code>.</li>
+            <li>Deixa o CSS mais claro e sustentável.</li>
+            <li>Ajuda a prever como o navegador aplicará os estilos.</li>
+        </ul>
+
     </main>
 </body>
+
 </html>
